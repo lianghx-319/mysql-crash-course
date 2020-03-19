@@ -1,0 +1,33 @@
+version: "3.3"
+services:
+  db:
+    build: .
+    restart: always
+    secrets:
+        - db_root_password
+        - db_password
+    environment:
+      MYSQL_DATABASE: "crash"
+      # So you don't have to use root, but you can if you like
+      MYSQL_USER: "crash"
+      # You can use whatever password you like
+      MYSQL_PASSWORD_FILE: /run/secrets/db_password
+      # Password for root access
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
+    ports:
+      # <Port exposed> : < MySQL Port running inside container>
+      - "3326:3306"
+    expose:
+      # Opens port 3306 on the container
+      - "3306"
+      # Where our data will be persisted
+    volumes:
+      - type: bind
+        source: ./db_data
+        target: /var/lib/mysql
+
+secrets:
+  db_password:
+    file: ./db_password.txt
+  db_root_password:
+    file: ./db_root_password.txt
