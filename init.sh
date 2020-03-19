@@ -15,4 +15,4 @@ if [ ! -f "$DB_ROOT_PASSWORD_FILE" ]; then
   touch "$DB_ROOT_PASSWORD_FILE" && echo $INIT_PASSWORD > $DB_ROOT_PASSWORD_FILE
 fi
 
-docker-compose up -d 
+echo "Init finish, you can run docker-compose -d"
