@@ -8,6 +8,8 @@
 
 > 🐳A Docker Image for learning MySQL Crash Course. Includes essential databases.
 
+![image.png](https://i.loli.net/2020/03/21/ymsSYGDUAfjoJQc.png)
+
 ## Introduction
 
 Here is a docker image for who are reading the book 「[MySQL Crash Course](https://forta.com/books/0672327120/)」. Supply a simple way to setup MySQL and create essential databases.
