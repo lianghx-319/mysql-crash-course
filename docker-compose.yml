@@ -7,9 +7,9 @@ services:
         - db_root_password
         - db_password
     environment:
-      MYSQL_DATABASE: "crash"
+      MYSQL_DATABASE: "crashcourse"
       # So you don't have to use root, but you can if you like
-      MYSQL_USER: "crash"
+      MYSQL_USER: "crashcourse"
       # You can use whatever password you like
       MYSQL_PASSWORD_FILE: /run/secrets/db_password
       # Password for root access
